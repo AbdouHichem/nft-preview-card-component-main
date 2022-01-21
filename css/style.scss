@@ -29,6 +29,9 @@ body {
 a {
   text-decoration: none;
   color: var(--White);
+  &:hover {
+        color: var(--Cyan);
+      }
 }
 
 .card {
@@ -70,9 +73,7 @@ a {
     margin-bottom: 15px;
     .body_title {
       margin-bottom: 15px;
-      &:hover {
-        color: var(--Cyan);
-      }
+      
     }
     .body_desc {
       color: var(--Softblue);
