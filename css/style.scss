@@ -1,7 +1,118 @@
-.attribution {
-  font-size: 11px;
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+:root {
+  --Verydarkbluemain: hsl(217, 54%, 11%);
+  --Verydarkbluecard: hsl(216, 50%, 16%);
+  --Verydarkblueline: hsl(215, 32%, 27%);
+  --White: hsl(0, 0%, 100%);
+  --Softblue: hsl(215, 51%, 70%);
+  --Cyan: hsl(178, 100%, 50%);
 }
-.attribution a {
-  color: hsl(228, 45%, 44%);
+
+html {
+  font-family: Outfit;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--Verydarkbluemain);
+  min-width: 100vh;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--White);
+}
+
+.card {
+  background-color: var(--Verydarkbluecard);
+  max-width: 350px;
+  padding: 25px;
+  border-radius: 15px;
+  .card_img {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover {
+      &::before {
+        opacity: 1;
+      }
+    }
+    &::before {
+      --softcyan: hsla(178, 100%, 50%, 0.5);
+      content: url(../images/icon-view.svg);
+      background: var(--softcyan);
+      position: absolute;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: all 0.25s ease;
+    }
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+  .card_body {
+    padding: 23px 0;
+    border-bottom: 1px solid var(--Verydarkblueline);
+    margin-bottom: 15px;
+    .body_title {
+      margin-bottom: 15px;
+      &:hover {
+        color: var(--Cyan);
+      }
+    }
+    .body_desc {
+      color: var(--Softblue);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .body_detail {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .body_price,
+      .body_time {
+        display: flex;
+        align-items: center;
+      }
+      .body_price {
+        color: var(--Cyan);
+      }
+      .body_time {
+        color: var(--Softblue);
+      }
+      .price_icon {
+        margin-right: 6px;
+      }
+      .time_icon {
+        margin-right: 6px;
+      }
+    }
+  }
+  .card_footer {
+    display: flex;
+    align-items: center;
+    .avatar {
+      border: 1px solid var(--White);
+      border-radius: 5em;
+      width: 34px;
+      margin-right: 18px;
+    }
+    .author {
+      color: var(--Softblue);
+    }
+  }
 }
